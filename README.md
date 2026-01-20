@@ -1,1 +1,1 @@
-Hello world!
+SeQureDB is a workshop dedicated to research on data privacy within data management systems. It provides a forum for exchanging ideas on privacy-preserving data processing, fostering dialogue between the database and security/cryptography communities. The workshop brings together researchers from academia, industry, and government to discuss advances in secure data management.
