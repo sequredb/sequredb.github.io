@@ -365,6 +365,101 @@
             nav a { margin-right: 15px; font-size: 1rem; }
             .topics-visual { grid-template-columns: repeat(3, 1fr); }
         }
+
+        /* Schedule */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.97rem;
+        }
+        .schedule-table thead tr {
+            background: #1a365d;
+            color: #fff;
+        }
+        .schedule-table th {
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .schedule-table tbody tr {
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .schedule-table tbody tr:last-child {
+            border-bottom: none;
+        }
+        .schedule-table tbody tr:hover {
+            background: #f7fafc;
+        }
+        .schedule-table td {
+            padding: 10px 14px;
+            vertical-align: top;
+        }
+        .schedule-table td:first-child {
+            white-space: nowrap;
+            color: #1a365d;
+            font-weight: 700;
+            width: 110px;
+        }
+        .schedule-row-break td {
+            background: #edf2f7;
+            color: #4a5568;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        .schedule-speaker {
+            display: block;
+            font-size: 0.88rem;
+            color: #718096;
+            margin-top: 2px;
+        }
+        .schedule-table tbody tr:last-child td {
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .abstract-toggle {
+            color: #0066cc;
+            font-size: 0.88rem;
+            cursor: pointer;
+            margin-top: 4px;
+            display: inline-block;
+            user-select: none;
+        }
+        .abstract-toggle:hover { text-decoration: underline; }
+        .abstract-text {
+            display: none;
+            margin-top: 8px;
+            font-size: 0.92rem;
+            color: #555;
+            line-height: 1.6;
+            border-left: 3px solid #e2e8f0;
+            padding-left: 12px;
+        }
+        .abstract-text.open { display: block; }
+        h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin: 35px 0 15px;
+        }
+        .poster-list {
+            list-style: none;
+            margin-left: 0;
+            font-size: 0.92rem;
+        }
+        .poster-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .poster-list li:last-child {
+            border-bottom: none;
+        }
+        .poster-list strong {
+            font-weight: 600;
+        }
+        .schedule-table td strong,
+        .poster-list strong {
+            font-size: 0.92rem;
+        }
     </style>
 </head>
 <body>
@@ -469,6 +564,7 @@
 <nav>
     <div class="nav-container">
         <a href="#about">About</a>
+        <a href="#schedule">Schedule</a>
         <a href="#cfp">Call for Papers</a>
         <a href="#dates">Important Dates</a>
         <a href="#submission">Submission</a>
@@ -485,6 +581,134 @@
             About
         </h2>
         <p>SeQureDB is a workshop dedicated to research on data privacy within data management systems. It provides a forum for exchanging ideas on privacy-preserving data processing, fostering dialogue between the database and security/cryptography communities. The workshop brings together researchers from academia, industry, and government to discuss advances in secure data management.</p>
+
+        <h2 id="schedule">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#1a365d"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+            Workshop Schedule
+        </h2>
+        <p>All times are in IST (UTC+5:30).</p>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>8:45 – 9:00 AM</td>
+                    <td>Welcome</td>
+                </tr>
+                <tr>
+                    <td>9:00 – 10:00 AM</td>
+                    <td><b>Keynote 1: Private Data Querying and LLM Inference with Homomorphic Encryption</b>
+                        <span class="schedule-speaker">Amr El Abbadi, University of California, Santa Barbara</span>
+                        <span class="abstract-toggle" onclick="toggleAbstract(this)">[Abstract]</span>
+                        <div class="abstract-text">Increasingly countries and regions have strict laws and regulations to protect the privacy of personal data. For example, the states of the European Union (EU) enforce the General Data Protection Regulations (GDPR) to protect personal data of individuals living in the EU. Much research has focused on preserving the privacy of data using various advanced cryptographic techniques. However, and irrespective of the privacy of the data itself, just the queries requesting the data raise severe privacy concerns owing to numerous attacks and data breaches using access patterns. Our goal in this talk is to demonstrate how private access of data, using sophisticated, expensive but secure cryptographic methods can become a practical reality in the near future. We will start by laying the foundations for large scale privacy preserving efficient and expressible querying of large data sets using Fully Homomorphic Encryption (FHE).  More recently as large language models (LLMs) are increasingly deployed across a wide range of applications, protecting the privacy of user queries has become a critical concern. FHE offers a compelling approach to address these challenges by enabling computation directly over encrypted data, allowing an untrusted server to execute both queries and LLM inference without learning the underlying inputs. Despite its promise, private FHE presents substantial technical challenges.  In this talk we will discuss recent efforts to overcome these limitations to improve the performance, scalability and expressiveness of privacy preserving queries of public data and LLM inference. </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10:00 – 10:20 AM</td>
+                    <td>ANCHOR: A Vision for Secure Persistent Key-Value Stores in Disaggregated Data Centers
+                        <span class="schedule-speaker">Viraj Thakkar, Dongha Kim, Hokeun Kim, Zhichao Cao (Arizona State University)</span>
+                    </td>
+                </tr>
+                <tr class="schedule-row-break">
+                    <td>10:20 – 11:00 AM</td>
+                    <td>☕ Coffee Break</td>
+                </tr>
+                <tr>
+                    <td>11:00 – 11:20 AM</td>
+                    <td>Inference-Aware &amp; Privacy-Preserving Deletions in Databases [Vision]
+                        <span class="schedule-speaker">Vishal Chakraborty (UC Irvine); Youri Kaminsky (HPI); Arnav Dhariya, Sharad Mehrotra (UCI); Felix Naumann (HPI); Sarvesh Pandey (Banaras Hindu University)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>11:20 – 11:40 AM</td>
+                    <td>Refined Differentially Private Linear Regression via Extension of a Free Lunch Result
+                        <span class="schedule-speaker">Sasmita Harini S, Anshoo Tandon (Indian Institute of Science)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>11:40 AM – 12:00 PM</td>
+                    <td>Estimating Power-Law Exponent with Edge Differential Privacy
+                        <span class="schedule-speaker">Adam Tan, Mohamed Hefny, Keval Vora (Simon Fraser University)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>12:00 – 12:20 PM</td>
+                    <td>ScanTwin: Simulating Performance Regressions Without Access to Tenant Data
+                        <span class="schedule-speaker">Donghyun Sohn, Jennie Rogers (Northwestern University)</span>
+                    </td>
+                </tr>
+                <tr class="schedule-row-break">
+                    <td>12:20 – 1:30 PM</td>
+                    <td>🍽 Lunch</td>
+                </tr>
+                <tr>
+                    <td>1:30 – 2:30 PM</td>
+                    <td><b>Keynote 2: From Bottlenecks to Breakthroughs: Accelerating MPC for Secure ML</b>
+                        <span class="schedule-speaker">Divya Gupta, Microsoft Research</span>
+                        <span class="abstract-toggle" onclick="toggleAbstract(this)">[Abstract]</span>
+                        <div class="abstract-text">Secure multi-party computation (MPC) holds the promise of enabling privacy-preserving machine learning across data and model silos—but in practice, performance, scale and useability bottlenecks have limited real-world adoption. In this talk, I will discuss how recent advances in function secret sharing (FSS) are transforming these bottlenecks into breakthroughs, pushing MPC for secure ML from theory to high-performance reality. ORCA combines novel FSS-based protocol designs with GPU acceleration to speed up secure training and inference – achieving sub-second ImageNet inference. SIGMA brings secure transformer inference into the realm of practicality, introducing new FSS-based protocols for core ML functions and enabling the first secure execution of GPT-class models, including LLaMA2-13B in under a minute. Finally, I will discuss SHARK, the first FSS-based system for actively secure ML inference that outperforms prior state-of-the-art protocols by two-three orders of magnitude.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2:30 – 2:50 PM</td>
+                    <td>Secure Multi-Party Analytics in the Enterprise Revisited: Opportunities and Challenges
+                        <span class="schedule-speaker">Long Gu, Shaza Zeitouni, Carsten Binnig, Zsolt István (TU Darmstadt)</span>
+                    </td>
+                </tr>
+                <tr class="schedule-row-break">
+                    <td>2:50 – 3:30 PM</td>
+                    <td>☕ Coffee Break</td>
+                </tr>
+                <tr>
+                    <td>3:30 – 3:50 PM</td>
+                    <td>Privacy-Preserving AEGIS for Secure Data-Sharing Ecosystems
+                        <span class="schedule-speaker">Varun Madathil (Yale University); Senjuti Basu Roy (New Jersey Institute of Technology)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3:50 – 4:10 PM</td>
+                    <td>Query Cost Model Calibration in Confidential Virtual Machines
+                        <span class="schedule-speaker">Qihan Zhang, Mengyuan Li, Ibrahim Sabek (University of Southern California)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4:10 – 4:30 PM</td>
+                    <td>Compliance in Databases: A Study of Structural Policies and Query Optimization
+                        <span class="schedule-speaker">Ahana Pradhan (IIIT); Srinivas Karthik (Microsoft); Shaik Imtiyazuddin, Srinivas Vivek (IIIT); </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4:30 – 5:30 PM</td>
+                    <td>Poster Session
+                        <span class="schedule-speaker">All papers</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Accepted Posters</h4>
+        <ul class="poster-list">
+        <li>
+            <strong>Running the Entire Relational Database within AMD SEV</strong>
+            <span class="schedule-speaker">Xinying Yang, Ruide Zhang, Peixuan He, Fam Zheng, Yang Liu, Lu Yan (ByteDance)</span>
+        </li>
+        <li>
+            <strong>TruthTable: A Verifiable Query Engine</strong>
+            <span class="schedule-speaker">Bharath Namboothiry, Alireza Shirzad, Spencer Solit, Ryan Marcus, Pratyush Mishra (University of Pennsylvania)</span>
+        </li>
+        <li>
+            <strong>Policy-aware Vector Search: A Vision for Fine Grained Access Control in Vector Databases</strong>
+            <span class="schedule-speaker">Lakshmi Sahithi, Primal Pappachan (Portland State University)</span>
+        </li>
+        <li>
+            <strong>Breaking the Scalability Barrier: Fast, Online Private Sorting for Encrypted Data on a Federated Cloud</strong>
+            <span class="schedule-speaker">Shyam Murthy (CDPG, IISc); Sikhar Patranabis (IBM Research); Imtiyazuddin Shaik, Srinivas Vivek (IIIT Bangalore)</span>
+        </li>
+    </ul>
 
         <h2 id="cfp">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="#1a365d"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
@@ -695,5 +919,11 @@
     </div>
 </footer>
 
+<script>
+function toggleAbstract(el) {
+    const abstract = el.nextElementSibling;
+    abstract.classList.toggle('open');
+}
+</script>
 </body>
 </html>
